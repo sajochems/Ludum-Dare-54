@@ -6,13 +6,14 @@ public class PlayerInteract : MonoBehaviour
 {
 
     private PlayerText playerText;
-    private PlayerInput playerInput;
+    private InputManager playerInput;
 
     private Interactable interactable;
     // Start is called before the first frame update
     void Start()
     {
         playerText = GetComponent<PlayerText>();
+        playerInput = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class PlayerInteract : MonoBehaviour
         if(interactable != null)
         {
             playerText.UpdateText(interactable.promptMessage);
-            if (playerInput.Player.Interact.triggered)
+            if (playerInput.playerActions.Interact.triggered)
             {
                 interactable.BaseInteract();
             }
