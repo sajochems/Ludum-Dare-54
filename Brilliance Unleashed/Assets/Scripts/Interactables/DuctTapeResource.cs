@@ -6,7 +6,7 @@ public class DuctTapeResource : Interactable
 {
     protected override void Interact()
     {
-        Debug.Log("You collected Ductape");
+        Debug.Log("You collected Ductape good Job");
     }
 
 
