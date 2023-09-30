@@ -4,8 +4,25 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+
     [SerializeField]
     public string promptMessage;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerInteract>().SetInRange(this);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerInteract>().SetInRange(null);
+        }
+    }
 
     public virtual string OnPosition()
     {
