@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f254cbcec7afe244b9107f3af537ca7
+guid: 992c4c36b4e09c34aa0d79c43d70a6f1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  alignment: 9
+  spritePivot: {x: 0.35, y: 0.725}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 318, y: 677, z: 620, w: 256}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -129,88 +129,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Dirt-and-water_0
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5335b6b3afe514541ae8481c832489b3
-      internalID: -1341219922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt-and-water_1
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 80
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.75}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e5e1e5017ba2064c83ab7b64b769cee
-      internalID: -1483744680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dirt-and-water_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -15, y: 0}
-        - {x: 0, y: 8}
-        - {x: 15, y: 0}
-        - {x: 0, y: -8}
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98a11b873715eb4cb38978ead33b68c
-      internalID: 2029824925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Dirt-and-water_1: -1483744680
-      Dirt-and-water_2: 2029824925
-      Dirt-and-water_0: -1341219922
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
