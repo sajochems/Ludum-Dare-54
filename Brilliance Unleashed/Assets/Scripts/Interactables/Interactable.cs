@@ -21,6 +21,7 @@ public abstract class Interactable : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerInteract>().SetInRange(null);
+            LeaveSpace();
         }
     }
 
@@ -35,6 +36,11 @@ public abstract class Interactable : MonoBehaviour
     }
 
     protected virtual void Interact()
+    {
+
+    }
+
+    protected virtual void LeaveSpace()
     {
 
     }

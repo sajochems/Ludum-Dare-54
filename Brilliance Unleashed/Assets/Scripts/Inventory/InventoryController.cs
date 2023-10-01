@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    [HideInInspector]
     private ItemGrid selectedItemGrid;
 
     public ItemGrid SelectedItemGrid { 
