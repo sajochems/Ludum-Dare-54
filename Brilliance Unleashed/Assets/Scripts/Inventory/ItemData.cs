@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemData : ScriptableObject
 {
+    public string nameID;
+
     public int width = 1;
     public int height = 1;
 

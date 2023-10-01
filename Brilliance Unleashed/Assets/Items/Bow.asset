@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b57f5ca506b07040afd40efcc2423b4, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  nameID: Bow
   width: 3
   height: 2
   itemIcon: {fileID: 21300000, guid: 34f73046b8c37dd49b1e6cc2856e67db, type: 3}

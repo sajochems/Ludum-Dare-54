@@ -27,15 +27,15 @@ public class ItemGrid : MonoBehaviour
     {
         InventoryItem toReturn = inventoryItemSlot[x, y];
 
-        if (toReturn == null) { return null; }
-
         CleanGridReference(toReturn);
 
         return toReturn;
     }
 
-    private void CleanGridReference(InventoryItem item)
+    public void CleanGridReference(InventoryItem item)
     {
+        if(item == null) { return; }
+
         for (int ix = 0; ix < item.WIDTH; ix++)
         {
             for (int iy = 0; iy < item.HEIGHT; iy++)
@@ -50,6 +50,25 @@ public class ItemGrid : MonoBehaviour
         inventoryItemSlot = new InventoryItem[width, height];
         Vector2 size = new Vector2(width * tileSizeWidth, height * tileSizeHeight);
         rectTransform.sizeDelta = size;
+    }
+
+    public InventoryItem FindRequiredItem(string name)
+    {
+        InventoryItem current = null;
+        //loop over all items in grid and return one 
+        for (int y = 0; y < gridSizeHeight; y++)
+        {
+            for (int x = 0; x < gridSizeWidth; x++)
+            {
+                current = inventoryItemSlot[x, y];
+                if(current == null) { continue; }
+                if (current.itemData.nameID.Equals(name))
+                {
+                    return current;
+                }
+            }
+        }
+        return current;
     }
 
     internal InventoryItem GetItem(int x, int y)

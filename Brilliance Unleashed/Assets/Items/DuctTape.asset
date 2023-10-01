@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b57f5ca506b07040afd40efcc2423b4, type: 3}
   m_Name: DuctTape
   m_EditorClassIdentifier: 
+  nameID: DuctTape
   width: 2
   height: 2
   itemIcon: {fileID: 21300000, guid: 2888e3e5ad951ac48bb4439cf9cc801c, type: 3}

@@ -9,7 +9,6 @@ public class DuctTapeResource : Interactable
     ItemGrid itemGrid;
 
     InventoryItem selectedItem;
-    InventoryItem overlapItem;
     RectTransform rectTransform;
 
     [SerializeField] List<ItemData> items;
