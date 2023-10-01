@@ -62,6 +62,7 @@ public class DepletionManager : MonoBehaviour
                     if (!depletionTiles.ContainsKey(gridPosition))
                     {
                         depletionTiles.Add(gridPosition, 0f);
+                        //DestroyImmediate(depletionMap.GetTile(gridPosition), true);
                         counter++;
                     }
                 }
