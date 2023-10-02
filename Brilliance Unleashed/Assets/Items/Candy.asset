@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b57f5ca506b07040afd40efcc2423b4, type: 3}
-  m_Name: Diamond
+  m_Name: Candy
   m_EditorClassIdentifier: 
-  nameID: Diamond
-  width: 1
-  height: 1
+  nameID: Candy
+  width: 3
+  height: 3
   itemIcon: {fileID: 21300000, guid: 773f986ea4c31a44b91026469774046f, type: 3}
