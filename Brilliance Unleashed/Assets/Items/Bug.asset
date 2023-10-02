@@ -15,4 +15,4 @@ MonoBehaviour:
   nameID: Bug
   width: 1
   height: 1
-  itemIcon: {fileID: 21300000, guid: 773f986ea4c31a44b91026469774046f, type: 3}
+  itemIcon: {fileID: 21300000, guid: bf6ce9c3e51539644a3596a4d1539a30, type: 3}
