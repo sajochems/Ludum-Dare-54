@@ -21,7 +21,7 @@ public class PlayerUpgrade : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        /*if (Input.GetKeyDown(KeyCode.T))
         {
             IncreaseSpeed();
         }
@@ -33,7 +33,7 @@ public class PlayerUpgrade : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Victory();
-        }
+        }*/
     }
 
     public bool Victory()

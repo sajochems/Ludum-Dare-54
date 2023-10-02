@@ -96,10 +96,10 @@ public class SpiderDepot : Interactable
     public void loadNewRequirements()
     {
         int amountBug = UnityEngine.Random.Range(1, 10);
-        int amountGlasses = UnityEngine.Random.Range(0, 1); ;
+        int amountGlasses = UnityEngine.Random.Range(0, 2); ;
 
         SetRequirement("Bug", amountBug);
-        SetRequirement("Cat", amountGlasses);
+        SetRequirement("Glasses", amountGlasses);
         achieved = false;
     }
 

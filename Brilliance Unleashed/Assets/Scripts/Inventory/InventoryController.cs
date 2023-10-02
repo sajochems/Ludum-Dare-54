@@ -34,21 +34,6 @@ public class InventoryController : MonoBehaviour
     {
         ItemIconDrag();
 
-        //TODO: change to new input system
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(selectedItem == null)
-            {
-                CreateRandomItem();
-            }
-            
-        }
-
-        /*if (Input.GetKeyDown(KeyCode.T))
-        {
-            InsertRandomItem();
-        }*/
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             RotateItem();

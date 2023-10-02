@@ -95,7 +95,7 @@ public class DropOffHouse : Interactable
 
     public void loadNewRequirements()
     {
-        int amountDuctTape = UnityEngine.Random.Range(1, 5);
+        int amountDuctTape = UnityEngine.Random.Range(1, 4);
         int amountPlanks = UnityEngine.Random.Range(0, 3);
 
         SetRequirement("DuctTape", amountDuctTape);
