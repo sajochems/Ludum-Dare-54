@@ -11,6 +11,8 @@ public class SpiderDepot : Interactable
     [SerializeField]
     ItemGrid itemGrid;
 
+    [SerializeField] AudioSource audioSource;
+
     DepotText depotText;
 
     Dictionary<string, int> requirements = new Dictionary<string, int>();
@@ -129,6 +131,8 @@ public class SpiderDepot : Interactable
         {
             itemGrid.gameObject.SetActive(!active);
             active = !active;
+
+            audioSource.PlayOneShot(audioSource.clip, 1);
         }
 
     }

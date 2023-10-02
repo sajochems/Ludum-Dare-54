@@ -15,6 +15,8 @@ public class Resource : Interactable
     [SerializeField] GameObject itemPrefab;
     [SerializeField] Transform canvasTransform;
 
+    [SerializeField] AudioSource audioSource;
+
     private float time = 0.0f;
     public float itemSpawnCooldown;
 
@@ -40,6 +42,8 @@ public class Resource : Interactable
     {
         itemGrid.gameObject.SetActive(!active);
         active = !active;
+
+        if(audioSource != null) audioSource.PlayOneShot(audioSource.clip, 1);
     }
 
     protected override void LeaveSpace()

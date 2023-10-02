@@ -11,6 +11,9 @@ public class GirlDepot : Interactable
     [SerializeField]
     ItemGrid itemGrid;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     DepotText depotText;
 
     Dictionary<string, int> requirements = new Dictionary<string, int>();
@@ -129,6 +132,7 @@ public class GirlDepot : Interactable
         {
             itemGrid.gameObject.SetActive(!active);
             active = !active;
+            audioSource.PlayOneShot(audioSource.clip, 1);
         }
 
     }
