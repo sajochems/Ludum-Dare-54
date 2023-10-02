@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerUpgrade : MonoBehaviour
 {
@@ -38,6 +40,9 @@ public class PlayerUpgrade : MonoBehaviour
     {
         Debug.Log("Victory achieved");
         scoreTracker.GetComponent<Score>().running = false;
+        ScoreController.score = scoreTracker.GetComponent<TextMeshProUGUI>().text;
+        //Load the victory scene
+        SceneManager.LoadScene(3);
         return true;
     }
 
