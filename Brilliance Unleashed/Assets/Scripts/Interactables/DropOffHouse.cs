@@ -20,7 +20,7 @@ public class DropOffHouse : Interactable
     {
         itemGrid.gameObject.SetActive(active);
         SetRequirement("DuctTape", 3);
-        SetRequirement("Diamond", 1);
+        SetRequirement("Plank", 1);
     }
 
     
