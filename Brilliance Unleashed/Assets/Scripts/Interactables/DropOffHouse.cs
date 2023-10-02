@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class DropOffHouse : Interactable
 {
-    /*[SerializeField]
-    UIShop uiShop;*/
+    
 
     [SerializeField]
     ItemGrid itemGrid;
@@ -119,7 +118,7 @@ public class DropOffHouse : Interactable
         Debug.Log("thnx for the items");
 
 
-        //CoinUIField.instance.AddCoins(reward);
+        CoinUIField.instance.AddCoins(reward);
 
     }
 
@@ -132,9 +131,6 @@ public class DropOffHouse : Interactable
             active = !active;
         }
 
-/*        if(active) uiShop.Show();
-        else uiShop.Hide();*/
-
     }
 
     protected override void LeaveSpace()
@@ -142,8 +138,6 @@ public class DropOffHouse : Interactable
         itemGrid.gameObject.SetActive(false);
 
         active = false;
-
-        //uiShop.Hide();
 
     }
 

@@ -10,17 +10,25 @@ public class UIShop : MonoBehaviour
     private Transform container;
     private Transform shopItemTemplate;
 
+    [SerializeField]
+    GameObject player;
+
+    PlayerUpgrade playerUpgrade;
+
     private void Awake()
     {
         container = transform.Find("Container");
         shopItemTemplate = container.Find("UpdateTemplate");
         shopItemTemplate.gameObject.SetActive(false);
+
+        playerUpgrade = player.GetComponent<PlayerUpgrade>();
     }
 
     private void Start()
     {
         CreateItemButton(Updates.UpdateType.MoreSpeed, "More Speed", Updates.GetCost(Updates.UpdateType.MoreSpeed), 0);
         CreateItemButton(Updates.UpdateType.MoreInventory, "More Inventory", Updates.GetCost(Updates.UpdateType.MoreInventory), 1);
+        CreateItemButton(Updates.UpdateType.AchieveWealth, "Achieve Wealth", Updates.GetCost(Updates.UpdateType.AchieveWealth), 2);
 
         Hide();
     }
@@ -44,16 +52,47 @@ public class UIShop : MonoBehaviour
 
     public void TryBuyItem(Updates.UpdateType updateType)
     {
-        if(TrySpendCoinsAmount(Updates.GetCost(updateType)))
+        int spendCoins = Updates.GetCost(updateType);
+        if (TrySpendCoinsAmount(spendCoins))
         {
             switch (updateType)
             {
                 default: Debug.Log("");
                     break;
-                case Updates.UpdateType.MoreSpeed: Debug.Log("I am a speedy boy now");
-                    break;
-                case Updates.UpdateType.MoreInventory: Debug.Log("I can carry more stuff now");
-                    break;
+                case Updates.UpdateType.MoreSpeed:
+                    {
+                        Debug.Log("I am a speedy boy now");
+                        if (playerUpgrade.IncreaseSpeed())
+                        {
+                            CoinUIField.instance.AddCoins(-spendCoins);
+                            Debug.Log("I am a speedy boy now");
+                        } else
+                        {
+                            Debug.Log("Already fast af, boy");
+                        }
+                        break;
+                    }                       
+                    
+                case Updates.UpdateType.MoreInventory:
+                    {
+                        if (playerUpgrade.IncreaseInventorySize())
+                        {
+                            CoinUIField.instance.AddCoins(-spendCoins);
+                            Debug.Log("I can carry more stuff now");
+                        } else
+                        {
+                            Debug.Log("Maximized stomach area");
+                        }
+                        
+                        break;
+                    }
+                case Updates.UpdateType.AchieveWealth:
+                    {
+                        playerUpgrade.Victory();
+                        Debug.Log("victory achieved");
+                        break;
+                    }
+                    
             }
             
         } else
@@ -68,7 +107,6 @@ public class UIShop : MonoBehaviour
 
         if(price >= spendCoins)
         {
-            CoinUIField.instance.AddCoins(-spendCoins);
             return true;
         } else return false;
     }

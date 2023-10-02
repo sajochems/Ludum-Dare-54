@@ -7,7 +7,8 @@ public class Updates
     public enum UpdateType
     {
         MoreSpeed,
-        MoreInventory
+        MoreInventory,
+        AchieveWealth
     }
 
     public static int GetCost(UpdateType updateType)
@@ -16,8 +17,9 @@ public class Updates
         switch (updateType)
         {
             default: return 0;
-            case UpdateType.MoreSpeed: return 50;
-            case UpdateType.MoreInventory: return 100;
+            case UpdateType.MoreSpeed: return 10;
+            case UpdateType.MoreInventory: return 50;
+            case UpdateType.AchieveWealth: return 1000;
         }
     }
 }
