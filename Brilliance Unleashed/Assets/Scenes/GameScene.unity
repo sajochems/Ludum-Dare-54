@@ -6106,7 +6106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeeea73f664ed6645bfe3827b543027f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptMessage: 'Hmm only one setting: Whitewashing'
+  promptMessage: 'Hmm only one setting: Money laundering'
   itemGrid: {fileID: 884480945}
   audioSource: {fileID: 469413573}
   reward: 4
