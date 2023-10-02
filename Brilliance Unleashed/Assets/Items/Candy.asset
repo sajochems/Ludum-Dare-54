@@ -15,4 +15,4 @@ MonoBehaviour:
   nameID: Candy
   width: 3
   height: 3
-  itemIcon: {fileID: 21300000, guid: 773f986ea4c31a44b91026469774046f, type: 3}
+  itemIcon: {fileID: 21300000, guid: c552a2c9061eabe49a254644297baff0, type: 3}
