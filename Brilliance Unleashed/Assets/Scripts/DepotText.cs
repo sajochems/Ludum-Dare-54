@@ -8,22 +8,22 @@ public class DepotText : MonoBehaviour
 {
 
     [SerializeField]
-    private TextMeshProUGUI Amount1;
+    public TextMeshProUGUI Amount1;
 
     [SerializeField]
-    private TextMeshProUGUI Amount2;
+    public TextMeshProUGUI Amount2;
 
     [SerializeField]
-    private TextMeshProUGUI Amount3;
+    public TextMeshProUGUI Amount3;
 
     [SerializeField]
-    private GameObject itemIcon1;
+    public GameObject itemIcon1;
 
     [SerializeField]
-    private GameObject itemIcon2;
+    public GameObject itemIcon2;
 
     [SerializeField]
-    private GameObject itemIcon3;
+    public GameObject itemIcon3;
 
     [SerializeField]
     List<ItemData> items;
@@ -34,19 +34,13 @@ public class DepotText : MonoBehaviour
     void Start()
     {
         requirements = GetComponent<Interactable>().GetRequirements();
-
-        itemIcon1.SetActive(false);
-        itemIcon2.SetActive(false);
-        itemIcon3.SetActive(false);
-
-        Amount1.text = "";
-        Amount2.text = "";
-        Amount3.text = "";
+        Refresh();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Refresh();
         int counter = 0;
         foreach(string key in requirements.Keys)
         {
@@ -72,6 +66,18 @@ public class DepotText : MonoBehaviour
             counter += 1;
         }
     }
+
+    public void Refresh()
+    {
+        itemIcon1.SetActive(false);
+        itemIcon2.SetActive(false);
+        itemIcon3.SetActive(false);
+
+        Amount1.text = "";
+        Amount2.text = "";
+        Amount3.text = "";
+    }
+
 
     public ItemData FindItem(List<ItemData> list, string key)
     {

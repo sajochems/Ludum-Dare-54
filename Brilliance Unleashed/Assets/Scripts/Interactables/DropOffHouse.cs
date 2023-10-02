@@ -8,17 +8,19 @@ public class DropOffHouse : Interactable
     [SerializeField]
     ItemGrid itemGrid;
 
+    DepotText depotText;
+
     Dictionary<string, int> requirements = new Dictionary<string, int>();
 
     List<string> removeKeys = new List<string>();
     List<string> foundKeys = new List<string>(); 
     bool active = false;
-
     bool achieved = false;
 
     private void Start()
     {
         itemGrid.gameObject.SetActive(active);
+        depotText = GetComponent<DepotText>();
         SetRequirement("DuctTape", 3);
         SetRequirement("Plank", 1);
     }
@@ -81,13 +83,23 @@ public class DropOffHouse : Interactable
     private void GoalReached()
     {
         itemGrid.gameObject.SetActive(false);
+        depotText.Amount1.text = "";
+        depotText.Amount2.text = "";
+        depotText.Amount3.text = "";
+        depotText.itemIcon1.SetActive(false);
+        depotText.itemIcon2.SetActive(false);
+        depotText.itemIcon3.SetActive(false);
         Debug.Log("thnx for the items");
     }
 
     protected override void Interact()
     {
-        itemGrid.gameObject.SetActive(!active);
-        active = !active;
+        if (!achieved)
+        {
+            itemGrid.gameObject.SetActive(!active);
+            active = !active;
+        }
+        
     }
 
     protected override void LeaveSpace()
