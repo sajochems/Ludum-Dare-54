@@ -9,7 +9,7 @@ public class CoinUIField : MonoBehaviour
     public static CoinUIField instance;
 
     public TextMeshProUGUI coinText;
-    public int currentCoins = 0;
+    private int currentCoins = 45;
 
     void Awake()
     {
@@ -23,18 +23,14 @@ public class CoinUIField : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void AddCoins(int amount)
+    public void AddCoins(int amount)
     {
         currentCoins += amount;
         coinText.text = currentCoins.ToString();
     }
 
-    void Update()
+    public int GetCoins()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            AddCoins(1);
-            Debug.Log(currentCoins);
-        }
+        return currentCoins;
     }
 }

@@ -6,10 +6,15 @@ using UnityEngine;
 public class DropOffHouse : Interactable
 {
     [SerializeField]
+    UIShop uiShop;
+
+    [SerializeField]
     ItemGrid itemGrid;
 
     [SerializeField]
     public Dictionary<string, int> requirements = new Dictionary<string, int>{ { "DuctTape", 3 }, { "Diamond", 1 } };
+
+    public int reward = 5;
 
     List<string> removeKeys = new List<string>();
     List<string> foundKeys = new List<string>(); 
@@ -74,18 +79,22 @@ public class DropOffHouse : Interactable
 
     private void GoalReached()
     {
-        Debug.Log("thnx for the items");
+        CoinUIField.instance.AddCoins(reward);
     }
 
     protected override void Interact()
     {
         itemGrid.gameObject.SetActive(!active);
         active = !active;
+        if(active) uiShop.Show();
+        else uiShop.Hide();
     }
 
     protected override void LeaveSpace()
     {
         itemGrid.gameObject.SetActive(false);
         active = !active;
+
+        uiShop.Hide();
     }
 }
