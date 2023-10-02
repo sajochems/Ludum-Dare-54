@@ -20,7 +20,7 @@ public class ItemGrid : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        Init(gridSizeWidth, gridSizeHeight);
+        Resize(gridSizeWidth, gridSizeHeight);
     }
 
     public InventoryItem PickUpItem(int x, int y)
@@ -45,10 +45,24 @@ public class ItemGrid : MonoBehaviour
         }
     }
      
-    private void Init(int width, int height)
+    public void Resize(int width, int height)
     {
+        InventoryItem[,] old = inventoryItemSlot;
         inventoryItemSlot = new InventoryItem[width, height];
-        Vector2 size = new Vector2(width * tileSizeWidth, height * tileSizeHeight);
+        if (old != null)
+        {
+            for(int y = 0; y<gridSizeHeight; y++)
+            {
+                for(int x = 0; x<gridSizeWidth; x++)
+                {
+                    inventoryItemSlot[x, y] = old[x, y];
+                }
+            }
+        }
+        gridSizeWidth = width;
+        gridSizeHeight = height;
+
+        Vector2 size = new Vector2(gridSizeWidth * tileSizeWidth, gridSizeHeight * tileSizeHeight);
         rectTransform.sizeDelta = size;
     }
 

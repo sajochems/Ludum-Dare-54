@@ -34,13 +34,13 @@ public class DepotText : MonoBehaviour
     void Start()
     {
         requirements = GetComponent<Interactable>().GetRequirements();
-        Refresh();
+        RefreshText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Refresh();
+        RefreshText();
         int counter = 0;
         foreach(string key in requirements.Keys)
         {
@@ -67,7 +67,7 @@ public class DepotText : MonoBehaviour
         }
     }
 
-    public void Refresh()
+    public void RefreshText()
     {
         itemIcon1.SetActive(false);
         itemIcon2.SetActive(false);

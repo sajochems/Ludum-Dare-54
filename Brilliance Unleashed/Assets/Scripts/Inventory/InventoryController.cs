@@ -44,10 +44,10 @@ public class InventoryController : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        /*if (Input.GetKeyDown(KeyCode.T))
         {
             InsertRandomItem();
-        }
+        }*/
 
         if (Input.GetKeyDown(KeyCode.R))
         {

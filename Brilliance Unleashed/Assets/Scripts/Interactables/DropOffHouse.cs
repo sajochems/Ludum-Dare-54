@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DropOffHouse : Interactable
 {
     [SerializeField]
@@ -17,12 +18,15 @@ public class DropOffHouse : Interactable
     bool active = false;
     bool achieved = false;
 
+    [SerializeField]
+    float refreshTimer = 5f;
+    float time = 0f;
+
     private void Start()
     {
         itemGrid.gameObject.SetActive(active);
         depotText = GetComponent<DepotText>();
-        SetRequirement("DuctTape", 3);
-        SetRequirement("Plank", 1);
+        loadNewRequirements();
     }
 
     
@@ -47,9 +51,7 @@ public class DropOffHouse : Interactable
                 InventoryItem match = itemGrid.FindRequiredItem(key);
                 if(match != null)
                 {
-                
                     foundKeys.Add(key);
-
                     itemGrid.CleanGridReference(match);
                     Destroy(match.gameObject);
                 }      
@@ -69,19 +71,38 @@ public class DropOffHouse : Interactable
             //If no requirements exist then the goal is reached
             if(requirements.Count == 0)
             {
-                achieved = true;
                 GoalReached();
             } else
             {
                 achieved = false;
             }
 
+        } else
+        {
+            time += Time.deltaTime;
+            if(time > refreshTimer)
+            {
+                time = 0f;
+                loadNewRequirements();
+            }
         }
         
     }
 
+    public void loadNewRequirements()
+    {
+        int amountDuctTape = UnityEngine.Random.Range(1, 5);
+        int amountPlanks = UnityEngine.Random.Range(0, 3);
+
+        SetRequirement("DuctTape", amountDuctTape);
+        SetRequirement("Plank", amountPlanks);
+        achieved = false;
+    }
+
     private void GoalReached()
     {
+        achieved = true;
+
         itemGrid.gameObject.SetActive(false);
         depotText.Amount1.text = "";
         depotText.Amount2.text = "";
@@ -122,4 +143,5 @@ public class DropOffHouse : Interactable
     {
         requirements = other;
     }
+
 }
