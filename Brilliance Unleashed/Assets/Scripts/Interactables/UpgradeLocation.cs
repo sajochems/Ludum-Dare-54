@@ -7,6 +7,8 @@ public class UpgradeLocation : Interactable
     [SerializeField]
     UIShop uiShop;
 
+    [SerializeField] AudioSource audioSource;
+
     bool active = false;
 
 
@@ -17,6 +19,8 @@ public class UpgradeLocation : Interactable
         else uiShop.Hide();
 
         active = !active;
+
+        audioSource.PlayOneShot(audioSource.clip, 1);
 
     }
 
