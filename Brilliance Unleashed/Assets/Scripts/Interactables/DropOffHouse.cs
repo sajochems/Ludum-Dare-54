@@ -8,8 +8,7 @@ public class DropOffHouse : Interactable
     [SerializeField]
     ItemGrid itemGrid;
 
-    [SerializeField]
-    public Dictionary<string, int> requirements = new Dictionary<string, int>{ { "DuctTape", 3 }, { "Diamond", 1 } };
+    Dictionary<string, int> requirements = new Dictionary<string, int>();
 
     List<string> removeKeys = new List<string>();
     List<string> foundKeys = new List<string>(); 
@@ -20,6 +19,8 @@ public class DropOffHouse : Interactable
     private void Start()
     {
         itemGrid.gameObject.SetActive(active);
+        SetRequirement("DuctTape", 3);
+        SetRequirement("Diamond", 1);
     }
 
     
@@ -29,6 +30,7 @@ public class DropOffHouse : Interactable
         {
             foundKeys.Clear();
             removeKeys.Clear();
+
             //Find if an item in grid matches a requirement.
             foreach (string key in requirements.Keys)
             {
@@ -67,13 +69,18 @@ public class DropOffHouse : Interactable
             {
                 achieved = true;
                 GoalReached();
+            } else
+            {
+                achieved = false;
             }
+
         }
         
     }
 
     private void GoalReached()
     {
+        itemGrid.gameObject.SetActive(false);
         Debug.Log("thnx for the items");
     }
 
@@ -86,6 +93,21 @@ public class DropOffHouse : Interactable
     protected override void LeaveSpace()
     {
         itemGrid.gameObject.SetActive(false);
-        active = !active;
+        active = false;
+    }
+
+    protected override void SetRequirement(string key, int amount)
+    {
+        requirements[key] = amount;
+    }
+
+    public override Dictionary<string, int> GetRequirements()
+    {
+        return requirements;
+    }
+
+    protected override void SetAllRequirements(Dictionary<string, int> other)
+    {
+        requirements = other;
     }
 }

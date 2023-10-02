@@ -8,6 +8,20 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField]
     public string promptMessage;
 
+    [SerializeField]
+    private Dictionary<string, int> requirements;
+
+
+    public virtual Dictionary<string, int> GetRequirements()
+    {
+        return requirements;
+    }
+
+    protected virtual void SetAllRequirements(Dictionary<string, int> other)
+    {
+        this.requirements = other;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -43,6 +57,11 @@ public abstract class Interactable : MonoBehaviour
     protected virtual void LeaveSpace()
     {
 
+    }
+
+    protected virtual void SetRequirement(string key, int amount)
+    {
+        
     }
 
 }
