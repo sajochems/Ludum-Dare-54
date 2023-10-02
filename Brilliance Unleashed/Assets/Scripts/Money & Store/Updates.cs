@@ -18,8 +18,8 @@ public class Updates
         {
             default: return 0;
             case UpdateType.MoreSpeed: return 10;
-            case UpdateType.MoreInventory: return 50;
-            case UpdateType.AchieveWealth: return 500;
+            case UpdateType.MoreInventory: return 20;
+            case UpdateType.AchieveWealth: return 200;
         }
     }
 }
