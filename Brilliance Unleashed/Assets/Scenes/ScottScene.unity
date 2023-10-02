@@ -218,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b58e087a66fe0f94d90860670c93b9e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16c9ea2085bc99e439afa500e5ebfe17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47301618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.88, y: 1.51, z: 0}
+  m_LocalPosition: {x: -4.88, y: 1.39, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28735,7 +28735,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptMessage: I can never get rid of them
   itemGrid: {fileID: 845635518}
-  items: []
+  items:
+  - {fileID: 11400000, guid: 7bf5d7d03912ba14ea98e5e31a67019b, type: 2}
   itemPrefab: {fileID: 4676169075504205873, guid: 6f9f7a226a0e2a141889621419559753, type: 3}
   canvasTransform: {fileID: 1230792201}
   itemSpawnCooldown: 2
@@ -28796,7 +28797,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b58e087a66fe0f94d90860670c93b9e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d04a9c18f119ad2459a14eb8c55f2c4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

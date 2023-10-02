@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GirlDepot : Interactable
+public class SpiderDepot : Interactable
 {
     
 
@@ -95,11 +95,11 @@ public class GirlDepot : Interactable
 
     public void loadNewRequirements()
     {
-        int amountCandy = UnityEngine.Random.Range(0, 4);
-        int amountCat = 1;
+        int amountBug = UnityEngine.Random.Range(1, 10);
+        int amountGlasses = UnityEngine.Random.Range(0, 1); ;
 
-        SetRequirement("Candy", amountCandy);
-        SetRequirement("Cat", amountCat);
+        SetRequirement("Bug", amountBug);
+        SetRequirement("Cat", amountGlasses);
         achieved = false;
     }
 
