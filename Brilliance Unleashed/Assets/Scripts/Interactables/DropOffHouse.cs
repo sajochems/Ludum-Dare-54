@@ -6,12 +6,17 @@ using UnityEngine;
 
 public class DropOffHouse : Interactable
 {
+    /*[SerializeField]
+    UIShop uiShop;*/
+
     [SerializeField]
     ItemGrid itemGrid;
 
     DepotText depotText;
 
     Dictionary<string, int> requirements = new Dictionary<string, int>();
+
+    public int reward = 5;
 
     List<string> removeKeys = new List<string>();
     List<string> foundKeys = new List<string>(); 
@@ -101,6 +106,7 @@ public class DropOffHouse : Interactable
 
     private void GoalReached()
     {
+
         achieved = true;
 
         itemGrid.gameObject.SetActive(false);
@@ -111,22 +117,34 @@ public class DropOffHouse : Interactable
         depotText.itemIcon2.SetActive(false);
         depotText.itemIcon3.SetActive(false);
         Debug.Log("thnx for the items");
+
+
+        //CoinUIField.instance.AddCoins(reward);
+
     }
 
     protected override void Interact()
     {
+
         if (!achieved)
         {
             itemGrid.gameObject.SetActive(!active);
             active = !active;
         }
-        
+
+/*        if(active) uiShop.Show();
+        else uiShop.Hide();*/
+
     }
 
     protected override void LeaveSpace()
     {
         itemGrid.gameObject.SetActive(false);
+
         active = false;
+
+        //uiShop.Hide();
+
     }
 
     protected override void SetRequirement(string key, int amount)
